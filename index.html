@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>te amo</title>
+<style>
+:root{--bg:#fbf3f6;--ink:#4a3347;--paper:#fffdf9;--accent:#c9718f;--space:#14112e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1426;--ink:#f3e6ee;--paper:#2a1d35;--accent:#e58aa9}}
+:root[data-theme="dark"]{--bg:#1d1426;--ink:#f3e6ee;--paper:#2a1d35;--accent:#e58aa9}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
+section{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 24px}
+h1{font-weight:normal;font-style:italic;color:var(--accent);margin:0 0 4px;font-size:1.8rem;text-align:center}
+.hint{opacity:.7;font-size:.9rem;margin:0 0 12px;text-align:center}
+#bouquet{width:min(340px,90vw);height:auto;touch-action:manipulation}
+.fl{cursor:pointer;transform-box:fill-box;transform-origin:50% 100%;transition:transform .5s}
+.fl.sway{animation:sway 1.2s ease-in-out}
+.fl.bloom .pet{transform:scale(1.25)}
+.pet{transform-box:fill-box;transform-origin:center;transition:transform .5s}
+@keyframes sway{0%,100%{transform:rotate(0)}25%{transform:rotate(-7deg)}75%{transform:rotate(7deg)}}
+.petal{position:fixed;pointer-events:none;font-size:18px;animation:fall 2.2s ease-in forwards;z-index:5}
+@keyframes fall{to{transform:translateY(60vh) rotate(260deg);opacity:0}}
+.corner{position:absolute;width:110px;height:auto;pointer-events:none;opacity:.95}
+.tl{top:0;left:0}.tr{top:0;right:0;transform:scaleX(-1)}
+.bl{bottom:0;left:0;transform:scaleY(-1)}.br{bottom:0;right:0;transform:scale(-1,-1)}
+.letter{background:var(--paper);max-width:480px;width:100%;padding:36px 28px;border-radius:6px;box-shadow:0 8px 30px rgba(120,60,90,.18);line-height:1.8;font-size:1.05rem;position:relative;z-index:1;opacity:0;transform:translateY(24px);transition:all 1s}
+.letter.in{opacity:1;transform:none}
+.letter p{margin:0 0 1em}
+.sign{text-align:right;font-style:italic;color:var(--accent)}
+#space{background:radial-gradient(ellipse at 50% 35%,#3a2a78,#1b1840 55%,#0d1a2e);color:#fff;overflow:hidden}
+#space h2{font-weight:normal;font-style:italic;z-index:2;text-align:center}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;animation:tw 3s infinite}
+@keyframes tw{50%{opacity:.2}}
+.cats{display:flex;gap:18px;font-size:3rem;z-index:2;flex-wrap:wrap;justify-content:center}
+.cats span{display:inline-block;animation:float 4s ease-in-out infinite}
+.cats span:nth-child(2){animation-delay:-1.3s}.cats span:nth-child(3){animation-delay:-2.6s}
+@keyframes float{50%{transform:translateY(-18px) rotate(8deg)}}
+#evstar{width:190px;height:190px;z-index:2;cursor:pointer;animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.08)}}
+.wish,.ev{z-index:2;text-align:center;margin:8px 0}
+.wish{opacity:.75;font-size:.9rem}
+.ev{font-style:italic;color:#ffe9a8;font-size:1.2rem}
+#wishmsg{opacity:0;transition:opacity 1s;z-index:2;text-align:center;max-width:300px;min-height:3em;margin:6px 0}
+#wishmsg.on{opacity:1}
+.ff{position:absolute;width:6px;height:6px;border-radius:50%;background:#e8ff7a;box-shadow:0 0 10px 3px #d9ff5a;animation:drift 7s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translate(0,0);opacity:.3}50%{transform:translate(24px,-40px);opacity:1}}
+</style>
+</head>
+<body>
+
+<section id="top">
+<svg class="corner tl" viewBox="0 0 100 100" aria-hidden="true"><use href="#sn"/></svg>
+<svg class="corner tr" viewBox="0 0 100 100" aria-hidden="true"><use href="#sn"/></svg>
+<h1>te amo</h1>
+<p class="hint">Toca las flores 🌷</p>
+<svg id="bouquet" viewBox="0 0 300 380" aria-label="Ramo de flores">
+  <g stroke="#6aa06a" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M150 360 Q150 260 80 130"/><path d="M150 360 Q150 250 150 90"/><path d="M150 360 Q150 260 220 130"/>
+    <path d="M150 360 Q140 280 40 210"/><path d="M150 360 Q160 280 260 210"/>
+  </g>
+  <path d="M95 340 L205 340 L190 375 L110 375Z" fill="#e7c9d6"/>
+  <g class="fl" data-c="#f08aa8"><g class="pet"><circle cx="80" cy="130" r="30" fill="#f08aa8"/><circle cx="80" cy="130" r="11" fill="#ffe08a"/></g></g>
+  <g class="fl" data-c="#b69df0"><g class="pet"><circle cx="150" cy="90" r="34" fill="#b69df0"/><circle cx="150" cy="90" r="12" fill="#ffe08a"/></g></g>
+  <g class="fl" data-c="#ffb37a"><g class="pet"><circle cx="220" cy="130" r="30" fill="#ffb37a"/><circle cx="220" cy="130" r="11" fill="#fff3b0"/></g></g>
+  <g class="fl" data-c="#ff9ab8"><g class="pet"><circle cx="40" cy="210" r="26" fill="#ff9ab8"/><circle cx="40" cy="210" r="9" fill="#ffe08a"/></g></g>
+  <g class="fl" data-c="#8ac7f0"><g class="pet"><circle cx="260" cy="210" r="26" fill="#8ac7f0"/><circle cx="260" cy="210" r="9" fill="#fff3b0"/></g></g>
+</svg>
+<p class="hint">Baja ↓</p>
+</section>
+
+<section id="carta">
+<svg class="corner tl" viewBox="0 0 100 100" aria-hidden="true"><use href="#sn"/></svg>
+<svg class="corner tr" viewBox="0 0 100 100" aria-hidden="true"><use href="#sn"/></svg>
+<svg class="corner bl" viewBox="0 0 100 100" aria-hidden="true"><use href="#sn"/></svg>
+<svg class="corner br" viewBox="0 0 100 100" aria-hidden="true"><use href="#sn"/></svg>
+<div class="letter" id="letter">
+  <p>Quiero darte las gracias por estos dos meses tan bonitos a tu lado, por cada conversación nocturna, cada risa y cada pequeño momento que hemos compartido. Me hace muy feliz poder haberte conocido y poder llamarte mi novia, de verdad, soy la más afortunada. A veces me pongo a pensar en lo bonito que es que, entre tantas personas, hayamos terminado encontrándonos nosotras 💕</p>
+  <p>Ojalá nos queden muchísimos momentos por vivir, muchas canciones por compartir, muchas películas románticas y de miedo por ver y muchas tonterías de las que reírnos juntas JAKQJQJ 💓 Gracias por ser tú, por tu cariño y por hacer que mis días sean más bonitos.</p>
+  <p class="sign">Te amo mucho mucho mucho princesita<br>Felices dos meses 🫂💓💓💓</p>
+</div>
+</section>
+
+<section id="space">
+<div id="stars"></div>
+<h2>Hay una estrella que brilla distinto ✨</h2>
+<svg id="evstar" viewBox="0 0 200 200" aria-label="Estrella Evangeline">
+<defs><radialGradient id="gl"><stop offset="0" stop-color="#fff6b0"/><stop offset="1" stop-color="#fff6b0" stop-opacity="0"/></radialGradient></defs>
+<circle cx="100" cy="100" r="95" fill="url(#gl)"/>
+<path d="M100 20 L112 88 L180 100 L112 112 L100 180 L88 112 L20 100 L88 88Z" fill="#fff8c4"/>
+</svg>
+<p class="wish">Toca la estrella y pide un deseo</p>
+<p id="wishmsg">Deseo concedido: muchísimos momentos más contigo 💫</p>
+<p class="ev">Mi Evangeline se llama Evelyn 💛</p>
+</section>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g id="sn">
+  <path d="M10 0 Q22 40 18 70" stroke="#6aa06a" stroke-width="3" fill="none"/>
+  <path d="M30 0 Q34 35 40 55" stroke="#6aa06a" stroke-width="3" fill="none"/>
+  <path d="M0 22 Q30 30 38 64" stroke="#6aa06a" stroke-width="3" fill="none"/>
+  <g fill="#fff" stroke="#c9d9c9" stroke-width="1"><ellipse cx="18" cy="82" rx="6" ry="11"/><ellipse cx="13" cy="80" rx="4" ry="9" transform="rotate(20 13 80)"/><ellipse cx="23" cy="80" rx="4" ry="9" transform="rotate(-20 23 80)"/>
+  <ellipse cx="40" cy="64" rx="6" ry="11"/><ellipse cx="35" cy="62" rx="4" ry="9" transform="rotate(20 35 62)"/><ellipse cx="45" cy="62" rx="4" ry="9" transform="rotate(-20 45 62)"/></g>
+  <circle cx="18" cy="70" r="3" fill="#9cc79c"/><circle cx="40" cy="53" r="3" fill="#9cc79c"/>
+</g></defs></svg>
+
+<script>
+var emojis=['🌸','🌷','💮','🌼'];
+document.querySelectorAll('.fl').forEach(function(f){
+  f.addEventListener('click',function(e){
+    f.classList.remove('sway');void f.getBoundingClientRect();f.classList.add('sway');
+    f.classList.toggle('bloom');
+    for(var i=0;i<6;i++){
+      var p=document.createElement('div');p.className='petal';
+      p.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+      p.style.left=(e.clientX+Math.random()*60-30)+'px';p.style.top=(e.clientY-10)+'px';
+      document.body.appendChild(p);setTimeout(function(x){x.remove()},2300,p);
+    }
+  });
+});
+var st=document.getElementById('stars');
+for(var i=0;i<60;i++){var s=document.createElement('div');s.className='star';
+  s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';st.appendChild(s);}
+var L=document.getElementById('letter');
+new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting)L.classList.add('in')})},{threshold:.3}).observe(L);
+for(var j=0;j<14;j++){var f=document.createElement('div');f.className='ff';
+  f.style.left=Math.random()*95+'%';f.style.top=(30+Math.random()*65)+'%';f.style.animationDelay=(-Math.random()*7)+'s';st.appendChild(f);}
+document.getElementById('evstar').addEventListener('click',function(e){
+  document.getElementById('wishmsg').classList.add('on');
+  for(var k=0;k<8;k++){var p=document.createElement('div');p.className='petal';p.textContent='✨';
+    p.style.left=(e.clientX+Math.random()*80-40)+'px';p.style.top=(e.clientY-20)+'px';
+    document.body.appendChild(p);setTimeout(function(x){x.remove()},2300,p);}
+});
+</script>
+</body>
+</html>
